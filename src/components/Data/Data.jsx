@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+/* import React, {useState, useEffect} from 'react';
 import { fetchApi } from '../../api';
 import {NativeSelect, FormControl } from '@material-ui/core';
 
@@ -25,4 +25,4 @@ const CountriesLister = ({ countryChange }) => {
 
 }
 
-export default CountriesLister;
+export default CountriesLister;*/

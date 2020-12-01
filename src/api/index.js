@@ -1,10 +1,11 @@
 import axios from 'axios';
 
-const url = 'https://www.trackcorona.live/api/countries';
+const countryurl = 'https://www.trackcorona.live/api/countries';
+const provinceurl = 'https://www.trackcorona.live/api/provinces';
 
-export const fetchApi = async () => {
+export const fetchCountry = async () => {
     try {
-        const {data: { data }} = await axios.get(`${url}`);
+        const {data: { data }} = await axios.get(`${countryurl}`);
 
 
         return data;
@@ -15,11 +16,16 @@ export const fetchApi = async () => {
     }
 }
 
-export const fetchCases = async (country) => {
+export const fetchProvince = async () => {
     try {
-        const { data: { All: { confirmed}} } = await axios.get( `${url}?country=${country}`)
-        return confirmed;
+        const {data: { data }} = await axios.get(`${provinceurl}`);
+
+
+        return data;
+
+        
     } catch (error) {
         console.log(error);
     }
 }
+
