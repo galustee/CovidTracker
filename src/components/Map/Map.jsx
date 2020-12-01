@@ -24,7 +24,6 @@ const Leaflet = (props) => {
                             Confirmed: {confirmed} <br />
                             Recovered: {recovered} <br />
                             Deaths: {deaths} <br />
-
                         </Popup>
                 </Marker>);
             }
@@ -36,8 +35,6 @@ const Leaflet = (props) => {
                         url={"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"}
                         attribution={'&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}
                         />
-                        <Marker position={position}>
-                        </Marker>
                         {items}
             </MapContainer>
         )
