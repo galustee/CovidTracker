@@ -6,7 +6,11 @@ export const fetchApi = async () => {
     try {
         const {data} = await axios.get(`${url}`);
 
-        return Object.keys(data).map((data) => data);
+        //console.log('test');
+        //console.log(Object.entries(data));
+
+        //return Object.keys(data).map((data) => data);
+        return data;
 
         
     } catch (error) {
