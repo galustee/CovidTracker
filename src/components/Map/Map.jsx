@@ -9,16 +9,18 @@ const Leaflet = (props) => {
         const data = props.data;
         console.log(data);
         const items = [];
-        console.log('test');
+       // console.log('test');
         //console.log(props.data)
 
         for (let key in data) {
-            if (data[key].lat != null) {
-                position = [data[key].lat, data[key].long];
+            if (key != 'data') {
+                let pos = [data[key].latitude, data[key].longitude];
                 let confirmed = data[key].confirmed;
-                let deaths = data[key].deaths;
+                let dead = data[key].dead;
                 let recovered = data[key].recovered;
-                let radius = 0.5 * confirmed;
+                let location = data[key].location;
+
+                let radius = 0.1 * confirmed;
                 let color = "blue";
 
                 if (confirmed > 500000) {
@@ -27,15 +29,19 @@ const Leaflet = (props) => {
 
                 //console.log(position);
                 items.push(
-                <Circle className="circles" center={position} radius={radius} color={color}>
+                <Circle className="circles" key={key} center={pos} radius={radius} color={color}>
                         <Popup>
-                            {key} <br />
+                            {location} <br />
                             Confirmed: {confirmed} <br />
                             Recovered: {recovered} <br />
-                            Deaths: {deaths} <br />
+                            Deaths: {dead} <br />
                         </Popup>
                 </Circle>);
+            
+                console.log(pos);
+                console.log(confirmed);
             }
+            
         }
 
         return (
@@ -49,11 +55,5 @@ const Leaflet = (props) => {
         )
 }
 
-const MyCircles = (data) => {
-    //console.log(data)
-    return (
-        <div></div>
-    )
-}
 
 export default Leaflet;

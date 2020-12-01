@@ -1,15 +1,12 @@
 import axios from 'axios';
 
-const url = 'https://cors-anywhere.herokuapp.com/' + 'https://covid-api.mmediagroup.fr/v1/cases';
+const url = 'https://www.trackcorona.live/api/countries';
 
 export const fetchApi = async () => {
     try {
-        const {data} = await axios.get(`${url}`);
+        const {data: { data }} = await axios.get(`${url}`);
 
-        //console.log('test');
-        //console.log(Object.entries(data));
 
-        //return Object.keys(data).map((data) => data);
         return data;
 
         
