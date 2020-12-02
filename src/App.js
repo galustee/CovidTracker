@@ -4,7 +4,7 @@ import React from 'react';
 import { Leaflet } from './components';
 import styles from './App.module.css';
 
-import { fetchCountry, fetchProvince} from './api'
+import { fetchCountry, fetchProvince, fetchCity} from './api'
 
 
 
@@ -12,14 +12,17 @@ class App extends React.Component{
     state = {
         countryData: {},
         provinceData: {},
+        cityData: {},
     }
 
     async componentDidMount() {
         const countryData = await fetchCountry();
         const provinceData = await fetchProvince();
+        const cityData = await fetchCity();
 
         console.log(countryData);
         console.log(provinceData);
+        console.log(cityData);
 
         //const { data } = fetchedData;
 
@@ -44,7 +47,6 @@ class App extends React.Component{
         return (
             <div className="stuff">
                 <Leaflet data={data}/>
-                
             </div>
         )
         //<Data />
