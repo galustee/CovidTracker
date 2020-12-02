@@ -4,7 +4,7 @@ import React from 'react';
 import { Leaflet } from './components';
 import styles from './App.module.css';
 
-import { fetchCountry, fetchProvince, fetchCity} from './api'
+import { fetchCountry, fetchProvince, fetchCity, fetchHistorical} from './api'
 
 
 
@@ -19,10 +19,12 @@ class App extends React.Component{
         const countryData = await fetchCountry();
         const provinceData = await fetchProvince();
         const cityData = await fetchCity();
+        const historicalData = await fetchHistorical();
 
         console.log(countryData);
         console.log(provinceData);
         console.log(cityData);
+        console.log(historicalData);
 
         //const { data } = fetchedData;
 
