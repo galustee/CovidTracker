@@ -1,7 +1,7 @@
 import React from 'react';
 
 //import { Data, Leaflet } from './components';
-import { Leaflet } from './components';
+import { Leaflet, Charts } from './components';
 import styles from './App.module.css';
 
 import { fetchCountry, fetchProvince, fetchCity, fetchHistorical} from './api'
@@ -36,7 +36,7 @@ class App extends React.Component{
         }
 
 
-        this.setState({countryData, provinceData});
+        this.setState({countryData, provinceData, cityData});
         //console.log(this.state);
         //console.log(this.state);
     }
@@ -49,6 +49,7 @@ class App extends React.Component{
         return (
             <div className="stuff">
                 <Leaflet data={data}/>
+                <Charts data={data}/>
             </div>
         )
         //<Data />

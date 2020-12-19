@@ -15,8 +15,8 @@ const Leaflet = (props) => {
   const provinceData = props.data.provinceData;
   //console.log(countryData);
 
-  //const items = CountryCircles(countryData);
-  const items = ProvinceCircles(countryData, provinceData)
+  const items = CountryCircles(countryData);
+  //const items = ProvinceCircles(countryData, provinceData)
 
   return (
     <div>
@@ -28,7 +28,7 @@ const Leaflet = (props) => {
         <TileLayer
           url={"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"}
           attribution={
-            '&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            '© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           }
         />
         {items}
