@@ -19,11 +19,11 @@ const Leaflet = (props) => {
   //const items = ProvinceCircles(countryData, provinceData)
 
   return (
-    <div>
+    <div className={styles.container}>
       <MapContainer
         center={position}
         zoom={zoom}
-        style={{ width: "100%", height: "500px" }}
+        style={{ width: "70%", height: "500px" }}
       >
         <TileLayer
           url={"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"}
@@ -33,6 +33,7 @@ const Leaflet = (props) => {
         />
         {items}
       </MapContainer>
+      <div>
       <FormControlLabel
         control={
           <Checkbox
@@ -44,6 +45,7 @@ const Leaflet = (props) => {
         }
         label="States/Provinces"
       />
+      </div>
     </div>
   );
 };

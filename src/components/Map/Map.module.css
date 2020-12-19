@@ -2,3 +2,16 @@
     background-color: red;
     color: red;
 }
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+}
+
+@media (max-width: 770px) { 
+    .container {
+        width: 100%;
+    }
+}
