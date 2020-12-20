@@ -7,7 +7,11 @@ import Button from '@material-ui/core/Button';
   
   
   
-const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } } ) => {  
+const Cards = (props) => ({ data: { confirmed, recovered, deaths, lastUpdate } } ) => {  
+    console.log(confirmed);
+
+        
+    
     if(!confirmed){  
         return 'Please wait..';  
     }  

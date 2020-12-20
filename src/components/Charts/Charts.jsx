@@ -39,7 +39,7 @@ const Charts = (props) => {
                     californiaconfirmed.push(props.data.cityData[i].confirmed)
                     californianames.push(props.data.cityData[i].location)
                     californiacolors.push(random_rgba())
-                    console.log(californiacolors)
+                 //   console.log(californiacolors)
                 }
             }
         }

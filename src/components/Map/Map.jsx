@@ -23,13 +23,16 @@ const Leaflet = (props) => {
       <MapContainer
         center={position}
         zoom={zoom}
-        style={{ width: "70%", height: "500px" }}
+        style={{ width: "70%", height: "500px",
+        noWrap:  true
+       }}
       >
         <TileLayer
           url={"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"}
           attribution={
             '© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           }
+          
         />
         {items}
       </MapContainer>
