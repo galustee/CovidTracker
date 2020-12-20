@@ -1,7 +1,7 @@
 import React from 'react';
 
 //import { Data, Leaflet } from './components';
-import {Cards, Leaflet, Charts } from './components';
+import {Cards, Leaflet, Charts, Projected } from './components';
 import './App.module.css';
 
 import { fetchCountry, fetchProvince, fetchCity, fetchHistorical, fetchWorldData} from './api'
@@ -55,6 +55,7 @@ class App extends React.Component{
                 <Cards data = {data}/>
                 <Leaflet data={data}/>
                 <Charts data={data}/>
+                <Projected data = {data}/>
             </div>
         )
         //<Data />

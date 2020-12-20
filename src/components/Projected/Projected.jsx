@@ -1,5 +1,5 @@
 import React from 'react';  
-import styles from './Cards.module.css'  
+import styles from './Projected.module.css'  
 import {Card, CardContent, Typography, Grid} from '@material-ui/core';  
 import CountUp from 'react-countup';  
 import cx from 'classnames';  
@@ -19,60 +19,51 @@ const Cards = (props) => {
     if(!props.data.worldData){  
         return 'Please wait..';  
     }  
+    //var projectedInfected = props.data.worldData.confirmed.value * 10
+    //var projectedActual = props.data.worldData.deaths.value * 1000
+    //var toiletPaper = props.data.worldData.confirmed.value / 100
 
-      
+    var projectedInfected = 100000
+    var projectedActual =100000
+    var toiletPaper =100
     return (  
         <div className={styles.container}>  
             <Grid container spacing = {3} justify="center">  
                 <Grid style={{backgroundColor: '#A9B7A4'}} item component={Card} xs={12} md={3} className={cx(styles.card, styles.infected)}>  
                     <CardContent >  
-                        <Typography color="textSecondary" gutterBottom>Global Infected</Typography>  
+                        <Typography color="textSecondary" gutterBottom>Projected Actual Infected</Typography>  
                         <Typography variant="h5" >  
-                            <CountUp start={0} end={20} duration={3} separator="," />  
+                            <CountUp start={0} end={projectedInfected} duration={3} separator="," />  
                         </Typography>  
                         <Typography color="textSecondary">{new Date(props.data.worldData.lastUpdate).toDateString()}</Typography>                
-                        <Typography variant="body2">Number of active cases of Covid-19</Typography>  
+                        <Typography variant="body2">Number of estimated actual cases</Typography>  
                     </CardContent>  
                 </Grid>  
   
                 <Grid style={{backgroundColor: '#688D82'}} item component={Card} xs={12} md={3} className={cx(styles.card, styles.recovered)}>  
                     <CardContent>  
-                        <Typography color="textSecondary" gutterBottom>Global Recovered</Typography>  
+                        <Typography color="textSecondary" gutterBottom>Projected Actual Cases</Typography>   
                         <Typography variant="h5" >  
-                            <CountUp start={0} end={20} duration={3} separator="," />  
+                            <CountUp start={0} end={projectedActual} duration={3} separator="," />  
                         </Typography>  
                         <Typography color="textSecondary" >{new Date(props.data.worldData.lastUpdate).toDateString()}</Typography>  
-                        <Typography variant="body2">Number of recoveries from Covid-19</Typography>  
+                        <Typography variant="body2">Number of projected cases of Covid-19</Typography>  
                     </CardContent>  
                 </Grid>  
   
                 <Grid style={{backgroundColor: '#7E9376'}}  item component={Card} xs={12} md={3} className={cx(styles.card, styles.deaths)}>  
                     <CardContent>  
-                        <Typography color="textSecondary" gutterBottom>Global Deaths</Typography>  
+                        <Typography color="textSecondary" gutterBottom>Rolls of Toilet Paper Bought</Typography>  
                         <Typography variant="h5" >  
-                            <CountUp start={0} end={20} duration={3} separator="," />  
+                            <CountUp start={0} end={toiletPaper} duration={3} separator="," />  
                         </Typography>  
                         <Typography color="textSecondary" >{new Date(props.data.worldData.lastUpdate).toDateString()}</Typography>  
-                        <Typography variant="body2">Number of deaths caused by Covid-19</Typography>  
+                        <Typography variant="body2">Number of rolls of toliet paper bought</Typography>  
                     </CardContent>  
                 </Grid>  
-
                 
   
-                <Grid className={styles.btnGrid} >   
-                 <Button  style={{backgroundColor: '#3A4E48'}} className={styles.btnMyGov}  variant="contained" color="primary" href="https://www.cdc.gov/coronavirus/2019-ncov/index.html">  
-                Learn More  
-                </Button>   
-                <Button style={{backgroundColor: '#6A7B76'}} className={styles.btnMyGov}  variant="contained" color="primary" href="https://www.mygov.in/covid-19">  
-                 Stay Safe  
-                </Button>  
-                 <Button style={{backgroundColor: '#57756C'}} className={styles.btnMyGov}  variant="contained" color="primary" href="https://covid19.ca.gov/get-tested/">  
-                 Get Tested  
-                </Button>  
-                <Button style={{backgroundColor: '#55625E'}} className={styles.btnMyGov}  variant="contained" color="primary" href="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html">  
-                 Get Vaccinated 
-                </Button>  
-                </Grid>  
+                
             </Grid>  
         </div>  
         )  

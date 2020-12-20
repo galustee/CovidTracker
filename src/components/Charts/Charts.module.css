@@ -3,6 +3,7 @@
     justify-content: center; 
     align-items: center;
     width: 100%;
+    font-size: 40px;
     
 }
 .charts {
@@ -10,6 +11,8 @@
     justify-content: center; 
     align-items: center;
     width: 50%;
+    text-emphasis: bolder;
+   
 }
 
 @media (max-width: 770px) { 
