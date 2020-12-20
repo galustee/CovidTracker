@@ -4,7 +4,7 @@ import React from 'react';
 import {Cards, Leaflet, Charts } from './components';
 import styles from './App.module.css';
 
-import { fetchCountry, fetchProvince, fetchCity, fetchHistorical} from './api'
+import { fetchCountry, fetchProvince, fetchCity, fetchHistorical, fetchWorldData} from './api'
 
 
 
@@ -15,6 +15,7 @@ class App extends React.Component{
         countryData: {},
         provinceData: {},
         cityData: {},
+        worldData: {},
        
         
     }
@@ -24,6 +25,7 @@ class App extends React.Component{
         const provinceData = await fetchProvince();
         const cityData = await fetchCity();
         const historicalData = await fetchHistorical();
+        const worldData = await fetchWorldData();
 
        
         
@@ -32,6 +34,7 @@ class App extends React.Component{
         console.log(provinceData);
         console.log(cityData);
         console.log(historicalData);
+        console.log(worldData);
         
 
        
@@ -45,7 +48,7 @@ class App extends React.Component{
         }
 
 
-        this.setState({countryData, provinceData, cityData});
+        this.setState({countryData, provinceData, cityData, worldData});
         //console.log(this.state);
         //console.log(this.state);
     }

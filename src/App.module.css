@@ -1,3 +1,10 @@
+.body {
+    background-color: rgb(139, 157, 131);
+    
+}
+
+
+
 .stuff {
     display: flex;
     align-items: center;

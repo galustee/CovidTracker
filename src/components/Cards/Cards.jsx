@@ -7,15 +7,24 @@ import Button from '@material-ui/core/Button';
   
   
   
-const Cards = (props) => ({ data: { confirmed, recovered, deaths, lastUpdate } } ) => {  
-    console.log(confirmed);
+const Cards = (props) => {
 
-        
-    
-    if(!confirmed){  
+    // props.data.provinceData
+    //     if (!props.data.provinceData) loading first gives nothing then actual data
+// iterate through the data array until you find what you are looking for
+// ie props.data.countryData[0] == country one then .confirmed gives that amount
+// make loop, search for what you want, set variable and use that to access that one specific piece of data
+
+
+
+//({ data: { confirmed, recovered, deaths, lastUpdate } } ) => {  
+ //   console.log(confirmed);
+
+
+    if(!props.data.worldData){  
         return 'Please wait..';  
     }  
-   console.log(lastUpdate);  
+   console.log(props.data.worldData);  
     return (  
         <div className={styles.container}>  
             <Grid container spacing = {3} justify="center">  
@@ -23,9 +32,9 @@ const Cards = (props) => ({ data: { confirmed, recovered, deaths, lastUpdate } }
                     <CardContent >  
                         <Typography color="textSecondary" gutterBottom>Infected</Typography>  
                         <Typography variant="h5" >  
-                            <CountUp start={0} end={confirmed.value} duration={3} separator="," />  
+                            <CountUp start={0} end={props.data.worldData.confirmed.value} duration={3} separator="," />  
                         </Typography>  
-                        <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>                
+                        <Typography color="textSecondary">{new Date(props.data.worldData.lastUpdate).toDateString()}</Typography>                
                         <Typography variant="body2">Number of active cases of Covid-19</Typography>  
                     </CardContent>  
                 </Grid>  
@@ -34,9 +43,9 @@ const Cards = (props) => ({ data: { confirmed, recovered, deaths, lastUpdate } }
                     <CardContent>  
                         <Typography color="textSecondary" gutterBottom>Recovered</Typography>  
                         <Typography variant="h5" >  
-                            <CountUp start={0} end={recovered.value} duration={3} separator="," />  
+                            <CountUp start={0} end={props.data.worldData.recovered.value} duration={3} separator="," />  
                         </Typography>  
-                        <Typography color="textSecondary" >{new Date(lastUpdate).toDateString()}</Typography>  
+                        <Typography color="textSecondary" >{new Date(props.data.worldData.lastUpdate).toDateString()}</Typography>  
                         <Typography variant="body2">Number of recoveries from Covid-19</Typography>  
                     </CardContent>  
                 </Grid>  
@@ -45,9 +54,9 @@ const Cards = (props) => ({ data: { confirmed, recovered, deaths, lastUpdate } }
                     <CardContent>  
                         <Typography color="textSecondary" gutterBottom>Deaths</Typography>  
                         <Typography variant="h5" >  
-                            <CountUp start={0} end={deaths.value} duration={3} separator="," />  
+                            <CountUp start={0} end={props.data.worldData.deaths.value} duration={3} separator="," />  
                         </Typography>  
-                        <Typography color="textSecondary" >{new Date(lastUpdate).toDateString()}</Typography>  
+                        <Typography color="textSecondary" >{new Date(props.data.worldData.lastUpdate).toDateString()}</Typography>  
                         <Typography variant="body2">Number of deaths caused by Covid-19</Typography>  
                     </CardContent>  
                 </Grid>  
