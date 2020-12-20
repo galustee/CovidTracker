@@ -15,8 +15,8 @@ const Leaflet = (props) => {
   const provinceData = props.data.provinceData;
   //console.log(countryData);
 
-  const items = CountryCircles(countryData);
-  //const items = ProvinceCircles(countryData, provinceData)
+  //const items = CountryCircles(countryData);
+  const items = ProvinceCircles(countryData, provinceData)
 
   return (
     <div className={styles.container}>
@@ -33,19 +33,6 @@ const Leaflet = (props) => {
         />
         {items}
       </MapContainer>
-      <div>
-      <FormControlLabel
-        control={
-          <Checkbox
-             checked={state.checkedA}
-            // onChange={handleChange}
-            name="checkedB"
-            color="primary"
-          />
-        }
-        label="States/Provinces"
-      />
-      </div>
     </div>
   );
 };
