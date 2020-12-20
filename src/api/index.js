@@ -54,6 +54,7 @@ export const fetchWorldData = async () => {
     try {
         const {data} = await axios.get(`${worldDataurl}`);
         return data;
+        
     } catch (error) {
         
     }

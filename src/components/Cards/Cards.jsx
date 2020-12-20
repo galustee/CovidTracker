@@ -16,15 +16,11 @@ const Cards = (props) => {
 // make loop, search for what you want, set variable and use that to access that one specific piece of data
 
 
-
-//({ data: { confirmed, recovered, deaths, lastUpdate } } ) => {  
- //   console.log(confirmed);
-
-
     if(!props.data.worldData){  
         return 'Please wait..';  
     }  
-   console.log(props.data.worldData);  
+
+      
     return (  
         <div className={styles.container}>  
             <Grid container spacing = {3} justify="center">  

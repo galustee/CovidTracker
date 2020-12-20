@@ -6,18 +6,13 @@ import styles from './App.module.css';
 
 import { fetchCountry, fetchProvince, fetchCity, fetchHistorical, fetchWorldData} from './api'
 
-
-
 class App extends React.Component{
-    
     
     state = {
         countryData: {},
         provinceData: {},
         cityData: {},
-        worldData: {},
-       
-        
+        worldData: {},      
     }
 
     async componentDidMount() {
@@ -27,18 +22,14 @@ class App extends React.Component{
         const historicalData = await fetchHistorical();
         const worldData = await fetchWorldData();
 
-       
-        
+              
 
         console.log(countryData);
         console.log(provinceData);
         console.log(cityData);
         console.log(historicalData);
         console.log(worldData);
-        
-
-       
-        
+              
 
        // console.log(fetchedData);
 
