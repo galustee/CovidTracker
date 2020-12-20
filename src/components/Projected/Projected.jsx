@@ -19,13 +19,13 @@ const Cards = (props) => {
     if(!props.data.worldData){  
         return 'Please wait..';  
     }  
-    //var projectedInfected = props.data.worldData.confirmed.value * 10
-    //var projectedActual = props.data.worldData.deaths.value * 1000
-    //var toiletPaper = props.data.worldData.confirmed.value / 100
+    var projectedInfected = props.data.worldData.confirmed.value * 10
+    var projectedActual = props.data.worldData.deaths.value * 1000
+    var toiletPaper = props.data.worldData.confirmed.value / 100
 
-    var projectedInfected = 100000
-    var projectedActual =100000
-    var toiletPaper =100
+    //var projectedInfected = 100000
+    //var projectedActual =100000
+    //var toiletPaper =100
     return (  
         <div className={styles.container}>  
             <Grid container spacing = {3} justify="center">  

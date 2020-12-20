@@ -28,7 +28,7 @@ const Cards = (props) => {
                     <CardContent >  
                         <Typography color="textSecondary" gutterBottom>Global Infected</Typography>  
                         <Typography variant="h5" >  
-                            <CountUp start={0} end={20} duration={3} separator="," />  
+                            <CountUp start={0} end={props.data.worldData.confirmed.value} duration={3} separator="," />  
                         </Typography>  
                         <Typography color="textSecondary">{new Date(props.data.worldData.lastUpdate).toDateString()}</Typography>                
                         <Typography variant="body2">Number of active cases of Covid-19</Typography>  
@@ -39,8 +39,8 @@ const Cards = (props) => {
                     <CardContent>  
                         <Typography color="textSecondary" gutterBottom>Global Recovered</Typography>  
                         <Typography variant="h5" >  
-                            <CountUp start={0} end={20} duration={3} separator="," />  
-                        </Typography>  
+                            <CountUp start={0} end={props.data.worldData.recovered.value} duration={3} separator="," />  
+                        </Typography>   
                         <Typography color="textSecondary" >{new Date(props.data.worldData.lastUpdate).toDateString()}</Typography>  
                         <Typography variant="body2">Number of recoveries from Covid-19</Typography>  
                     </CardContent>  
@@ -50,7 +50,7 @@ const Cards = (props) => {
                     <CardContent>  
                         <Typography color="textSecondary" gutterBottom>Global Deaths</Typography>  
                         <Typography variant="h5" >  
-                            <CountUp start={0} end={20} duration={3} separator="," />  
+                            <CountUp start={0} end={props.data.worldData.deaths.value} duration={3} separator="," />  
                         </Typography>  
                         <Typography color="textSecondary" >{new Date(props.data.worldData.lastUpdate).toDateString()}</Typography>  
                         <Typography variant="body2">Number of deaths caused by Covid-19</Typography>  
