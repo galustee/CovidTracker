@@ -2,7 +2,7 @@ import React from 'react';
 
 //import { Data, Leaflet } from './components';
 import {Cards, Leaflet, Charts } from './components';
-import styles from './App.module.css';
+import './App.module.css';
 
 import { fetchCountry, fetchProvince, fetchCity, fetchHistorical, fetchWorldData} from './api'
 

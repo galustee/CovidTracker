@@ -24,7 +24,7 @@ const Cards = (props) => {
     return (  
         <div className={styles.container}>  
             <Grid container spacing = {3} justify="center">  
-                <Grid style={{backgroundColor: 'rgba(208, 208, 241, 0.5)'}} item component={Card} xs={12} md={3} className={cx(styles.card, styles.infected)}>  
+                <Grid style={{backgroundColor: '#A9B7A4'}} item component={Card} xs={12} md={3} className={cx(styles.card, styles.infected)}>  
                     <CardContent >  
                         <Typography color="textSecondary" gutterBottom>Global Infected</Typography>  
                         <Typography variant="h5" >  
@@ -35,7 +35,7 @@ const Cards = (props) => {
                     </CardContent>  
                 </Grid>  
   
-                <Grid style={{backgroundColor: 'rgba(188, 253, 188, 0.5)'}} item component={Card} xs={12} md={3} className={cx(styles.card, styles.recovered)}>  
+                <Grid style={{backgroundColor: '#688D82'}} item component={Card} xs={12} md={3} className={cx(styles.card, styles.recovered)}>  
                     <CardContent>  
                         <Typography color="textSecondary" gutterBottom>Global Recovered</Typography>  
                         <Typography variant="h5" >  
@@ -46,7 +46,7 @@ const Cards = (props) => {
                     </CardContent>  
                 </Grid>  
   
-                <Grid style={{backgroundColor: 'rgba(245, 192, 192, 0.5)'}}  item component={Card} xs={12} md={3} className={cx(styles.card, styles.deaths)}>  
+                <Grid style={{backgroundColor: '#7E9376'}}  item component={Card} xs={12} md={3} className={cx(styles.card, styles.deaths)}>  
                     <CardContent>  
                         <Typography color="textSecondary" gutterBottom>Global Deaths</Typography>  
                         <Typography variant="h5" >  
