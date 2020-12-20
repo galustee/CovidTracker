@@ -9,7 +9,7 @@ import { fetchCountry, fetchProvince, fetchCity, fetchHistorical, fetchWorldData
 
 
 class App extends React.Component{
-
+    
     
     state = {
         countryData: {},

@@ -30,7 +30,7 @@ const Cards = (props) => {
             <Grid container spacing = {3} justify="center">  
                 <Grid style={{backgroundColor: 'rgba(208, 208, 241, 0.5)'}} item component={Card} xs={12} md={3} className={cx(styles.card, styles.infected)}>  
                     <CardContent >  
-                        <Typography color="textSecondary" gutterBottom>Infected</Typography>  
+                        <Typography color="textSecondary" gutterBottom>Global Infected</Typography>  
                         <Typography variant="h5" >  
                             <CountUp start={0} end={props.data.worldData.confirmed.value} duration={3} separator="," />  
                         </Typography>  
@@ -41,7 +41,7 @@ const Cards = (props) => {
   
                 <Grid style={{backgroundColor: 'rgba(188, 253, 188, 0.5)'}} item component={Card} xs={12} md={3} className={cx(styles.card, styles.recovered)}>  
                     <CardContent>  
-                        <Typography color="textSecondary" gutterBottom>Recovered</Typography>  
+                        <Typography color="textSecondary" gutterBottom>Global Recovered</Typography>  
                         <Typography variant="h5" >  
                             <CountUp start={0} end={props.data.worldData.recovered.value} duration={3} separator="," />  
                         </Typography>  
@@ -52,7 +52,7 @@ const Cards = (props) => {
   
                 <Grid style={{backgroundColor: 'rgba(245, 192, 192, 0.5)'}}  item component={Card} xs={12} md={3} className={cx(styles.card, styles.deaths)}>  
                     <CardContent>  
-                        <Typography color="textSecondary" gutterBottom>Deaths</Typography>  
+                        <Typography color="textSecondary" gutterBottom>Global Deaths</Typography>  
                         <Typography variant="h5" >  
                             <CountUp start={0} end={props.data.worldData.deaths.value} duration={3} separator="," />  
                         </Typography>  
@@ -62,17 +62,17 @@ const Cards = (props) => {
                 </Grid>  
   
                 <Grid className={styles.btnGrid} >   
-                 <Button  style={{backgroundColor: '#4A148C'}} className={styles.btnMyGov}  variant="contained" color="primary" href="https://www.mohfw.gov.in/">  
-                mohfw  
+                 <Button  style={{backgroundColor: '#3A4E48'}} className={styles.btnMyGov}  variant="contained" color="primary" href="https://www.cdc.gov/coronavirus/2019-ncov/index.html">  
+                Learn More  
                 </Button>   
-                <Button style={{backgroundColor: '#004D40'}} className={styles.btnMyGov}  variant="contained" color="primary" href="https://www.mygov.in/covid-19">  
-                 mygov  
+                <Button style={{backgroundColor: '#6A7B76'}} className={styles.btnMyGov}  variant="contained" color="primary" href="https://www.mygov.in/covid-19">  
+                 Stay Safe  
                 </Button>  
-                 <Button style={{backgroundColor: '#900C3F'}} className={styles.btnMyGov}  variant="contained" color="primary" href="https://twitter.com/who?lang=en">  
-                 WHO  
+                 <Button style={{backgroundColor: '#57756C'}} className={styles.btnMyGov}  variant="contained" color="primary" href="https://covid19.ca.gov/get-tested/">  
+                 Get Tested  
                 </Button>  
-                <Button style={{backgroundColor: '#581845'}} className={styles.btnMyGov}  variant="contained" color="primary" href="https://twitter.com/PIB_India">  
-                 PIB:IN  
+                <Button style={{backgroundColor: '#55625E'}} className={styles.btnMyGov}  variant="contained" color="primary" href="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html">  
+                 Get Vaccinated 
                 </Button>  
                 </Grid>  
             </Grid>  
