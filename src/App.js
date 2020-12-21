@@ -1,10 +1,11 @@
 import React from 'react';
 
 //import { Data, Leaflet } from './components';
-import { Leaflet, Charts, SearchBar } from './components';
+import { Leaflet, Charts } from './components';
+import {default as SearchBar, SearchBar1 } from './components/Search/SearchBar';
 import styles from './App.module.css';
 
-import { fetchCountry, fetchProvince, fetchCity, fetchHistorical, fetchUSHistorical, searchCountries} from './api';
+import { fetchCountry, fetchProvince, fetchCity, fetchHistorical, fetchUSHistorical, searchCountries, searchCities} from './api';
 
 
 class App extends React.Component{
@@ -13,6 +14,8 @@ class App extends React.Component{
         provinceData: {},
         cityData: {},
         country: '',
+        newCountryData: {},
+        newCityData: {},
     }
 
     async componentDidMount() {
@@ -45,22 +48,32 @@ class App extends React.Component{
     }
 
     handleCountryChange = async (country) => {
-        //console.log(country);
-        const fetchedCountry = await fetchCountry(country);
-        console.log(fetchedCountry)
-        //this.setState({ data: fetchedCountry, country: country});
+        console.log(country);
+        const fetchedCountry = await fetchCountry();
+        //console.log(fetchedCountry)
+        this.setState({ newCountryData: fetchedCountry, country: {country}});
+    }
+
+    handleCityChange = async (city) => {
+        console.log(city);
+        const fetchedCity = await fetchCity();
+        //console.log(fetchedCountry)
+        this.setState({ newCityData: fetchedCity, city: {city}});
     }
 
     render() {
         //console.log('boop');
         const data = this.state;
+        const country = this.state;
+        const city = this.state;
         //console.log(data);
         //console.log(data);
         return (
             <div className="stuff">
                 <Leaflet data={data}/>
-                <Charts data={data} />
+                <Charts data={data} country={country} city={city}/>
                 <SearchBar handleCountryChange = {this.handleCountryChange}/>
+                <SearchBar1 handleCityChange = {this.handleCityChange}/>
             </div>
         )
         //<Data />
