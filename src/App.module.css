@@ -1,0 +1,12 @@
+body {
+    background-color: #BEB0A7;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.stuff {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  
+}

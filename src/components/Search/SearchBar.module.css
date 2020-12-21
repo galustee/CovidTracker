@@ -1,0 +1,11 @@
+.formControl {
+  width: 40% !important;
+  padding: 12px 20px !important;
+  margin-top: 8px !important ;
+  display: inline-block !important;
+  border: 1px solid #ccc ;
+  border-radius: 4px ;
+  box-sizing: border-box ;
+  text-align: center !important;
+  padding-left: 400px !important;
+  }

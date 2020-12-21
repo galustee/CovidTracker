@@ -1,0 +1,43 @@
+.container {  
+    margin: 20px 0;  
+    }  
+    .MuiTypography-h5{
+        text-emphasis: bolder;
+    }
+      
+    .card {  
+        margin-top: 20px;
+        margin: 0 1% !important;  
+    }  
+      
+    .infected {  
+        border-bottom: 10px solid #453636;  
+    }  
+      
+    .recovered {  
+        border-bottom: 10px solid #503F3F;  
+    }  
+      
+    .deaths {  
+        border-bottom: 10px solid #2E2424;  
+    }  
+      
+    .links {  
+        border-bottom: 10px solid rgba(0, 158, 197, 0.5);  
+    }  
+      
+    .btnMyGov{  
+        height: 30px;      
+        margin-right: 5px !important;  
+        width: 160px;  
+    }  
+      
+    .btnGrid{  
+        margin-top: 30px !important;  
+        margin-bottom: 30px !important;  
+    }  
+    @media only screen and (max-width: 770px) {  
+        .card{  
+          margin: 2% 0 !important;  
+        }  
+      } 
