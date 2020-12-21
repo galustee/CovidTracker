@@ -4,6 +4,7 @@ const countryurl = 'https://www.trackcorona.live/api/countries';
 const provinceurl = 'https://www.trackcorona.live/api/provinces';
 const cityurl = 'https://www.trackcorona.live/api/cities'
 const historicalurl = 'https://covid19.mathdro.id/api/daily';
+const generalURL = 'https://covid19.mathdro.id/api'
 
 export const fetchCountry = async () => {
     try {
@@ -43,7 +44,24 @@ export const fetchCity = async () => {
 export const fetchHistorical = async () => {
     try {
         const {data} = await axios.get(`${historicalurl}`);
-        return data;
+        
+        const modifiedData = data.map((dailyData) => ({
+            confirmed: dailyData.confirmed.total,
+            deaths: dailyData.deaths.total,
+            date: dailyData.reportDate,
+        }));
+
+        return modifiedData;
+    } catch (error) {
+        
+    }
+}
+
+export const fetchGeneral = async () => {
+    try {
+        const {data: {confirmed, recovered, deaths, lastUpdate} } = await axios.get(`${generalURL}`);
+
+        return {confirmed, recovered, deaths, lastUpdate};
     } catch (error) {
         
     }

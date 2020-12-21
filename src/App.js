@@ -1,10 +1,11 @@
 import React from 'react';
 
-//import { Data, Leaflet } from './components';
+
 import { Leaflet } from './components';
 import styles from './App.module.css';
 
-import { fetchCountry, fetchProvince, fetchCity, fetchHistorical} from './api'
+import { fetchCountry, fetchProvince, fetchCity, fetchHistorical, fetchGeneral } from './api'
+import { Chart, CountryPicker } from './components'
 
 
 
@@ -13,6 +14,7 @@ class App extends React.Component{
         countryData: {},
         provinceData: {},
         cityData: {},
+        general: {}
     }
 
     async componentDidMount() {
@@ -21,37 +23,34 @@ class App extends React.Component{
         const cityData = await fetchCity();
         const historicalData = await fetchHistorical();
 
+        const generalData = await fetchGeneral();
+        this.setState({eData: generalData})
+
         console.log(countryData);
         console.log(provinceData);
         console.log(cityData);
-        console.log(historicalData);
-
-        //const { data } = fetchedData;
-
-       // console.log(fetchedData);
-
-        for (var key in countryData)
-        {
-          
-        }
+        console.log(historicalData); 
+        console.log(generalData);
 
 
         this.setState({countryData, provinceData});
-        //console.log(this.state);
-        //console.log(this.state);
+
     }
 
     render() {
-        //console.log('boop');
+
         const data = this.state;
-        //console.log(data);
-        //console.log(data);
+        const {eData} = this.state;
+        
+
         return (
             <div className="stuff">
                 <Leaflet data={data}/>
+                <CountryPicker data={eData} />
+                <Chart />
             </div>
         )
-        //<Data />
+        
     }
 }
 
