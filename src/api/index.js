@@ -69,3 +69,12 @@ export const searchCountries = async () => {
         console.log(error);
     }
 }
+
+export const searchCities = async () => {
+    try {
+        const { data: {data } } = await axios.get(`${cityurl}`);
+        return data.map((city) => city.location);
+    } catch (error) {
+        console.log(error);
+    }
+}
