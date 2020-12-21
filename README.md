@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# COVID Tracker
 
 ![Screenshot](https://i.imgur.com/rLgfPsq.png)
 
