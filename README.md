@@ -1,5 +1,15 @@
 # Getting Started with Create React App
 
+![Screenshot](https://i.imgur.com/rLgfPsq.png)
+
+Install with 
+
+### `npm install`
+
+run with 
+
+### `npm start` or `yarn start`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
