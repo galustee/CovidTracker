@@ -4,7 +4,7 @@
 
 Install with 
 
-### `npm install`
+### `npm install` or `yarn install`
 
 run with 
 
